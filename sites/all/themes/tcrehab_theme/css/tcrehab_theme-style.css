@@ -1,8 +1,20 @@
+/* Color Breakdown
+-------------------------------------------------------------- */
+/* Teal background on home page facebook feed & Pull Down Menu = #77c3c6 */
+/* Light green background color of page is more than 960px = #bde3dc */
+/* Top Navigation Font  = #6fc5cd - Yas photoshop file*/
+/* Top Navigation Font  = #7fd7ea - Sam color matching*/
+/* Top Navigation Font Hover  = #d4f97e */
+/* Top Navigation Pull Down Hover  = #208197 */
+
+
+
 
 /* Basic Typography & Colors
 -------------------------------------------------------------- */
 /* Add general site styling here for typography and background */
 body {
+  background-color: #bde3dc;
   font-size: 75%;   /* also set in fusion_starter.info: settings[base-font-size] = font-size-12 */
 }
 
@@ -16,6 +28,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
+	color: #d4f97e;
 }
 
 .button a,
@@ -83,6 +96,19 @@ body {
 #slogan {
 }
 
+/* Home Page Settings (Front)
+-------------------------------------------------------------- */
+.front .main-group{
+	width: 700px;
+}
+
+.front .main-group .gutter{
+	margin: 0px;
+}
+
+.front .sidebar-first {
+}
+
 
 /* Regions
 
@@ -95,6 +121,11 @@ body {
 /* By default this wrapper is set to 100% width and centered -- override here to
   narrow wrapper or align left or right */
 .page {
+/*
+  min-height: 100%;
+  min-width: 100%;
+  height: auto;
+*/
 }
 
 /* The 0 values here remove padding and spacing at the bottom of the page.
@@ -103,6 +134,9 @@ body {
   border: 0;
   margin-bottom: 0;
   padding: 0;
+  width: 960px;
+  background-color: white;
+  margin: auto;
 }
 
 
@@ -124,14 +158,14 @@ body {
 }
 
 .header-top {
-	background-color: aqua;
+	background:url(../images/b_top_nav.jpg) no-repeat 0% 0px;
 	width: 960px;
-	height: 37px;
+	height: 36px;
 	overflow: visible;
 }
 
 .header-top-inner{
-  background: url(../images/tcrehablogo.png) no-repeat 1% 5px;
+  background: url(../images/tcrehablogo.png) no-repeat 2% 5px;
   position: absolute;
 	height: 120px;
 	width: 960px;
@@ -148,25 +182,34 @@ ul.nice-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  border-top: 1px solid #ccc;
+  border-top: 0px solid #ccc;
+  background-color: transparent;
 }
 
 ul.nice-menu li {
-  border: 1px solid #ccc;
+  border: 0px solid #ccc;
   border-top: 0;
   float: left; /* LTR */
-  background-color: #eee;
+  background-color: transparent; /*Menu Item Background Color ie: Home, Who We Are, etc… */
+	height: 36px;
 }
 
 ul.nice-menu a {
   padding: 0.3em 5px 0.3em 5px;
+  color: #7fd7ea;
+  font-size: 17px;/* Determines the size of the font for the Menu Items ie: Home, Who We Are, etc... */
+}
+
+ul.nice-menu a:hover {
+	color: #d4f97e;
+	text-decoration: none;
 }
 
 ul.nice-menu ul {
   top: 1.8em;
   left: -1px; /* LTR */
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 0px solid #ccc;
   margin-right: 0; /* LTR */
 }
 
@@ -180,20 +223,33 @@ ul.nice-menu ul li {
 ******************************/
 
 .block-nice-menus {
-	margin: 0px 0px 00px 280px;
+	margin: 0px 0px 0px 280px;
 }
 
 ul.nice-menu-down {
   float: left; /* LTR */
   border: 0;
+  margin-top: 5px;
+  background-color: transparent;
 }
 
 ul.nice-menu-down li {
-  border-top: 1px solid #ccc;
+  border-top: 0px solid #ccc;
+  margin-bottom: 8px;
 }
 
 ul.nice-menu-down li li {
   border-top: 0;
+  background-color: #77c3c6; /*Background Color of the drop down */
+  width: 10em;
+}
+
+ul.nice-menu-down li li a{
+	color: #FFF; /* Color of Drop Down Text */
+}
+
+ul.nice-menu-down li li a:hover{
+	color: #208197; /* Color of Drop Down Text that the mouse is over */
 }
 
 ul.nice-menu-down ul {
@@ -214,11 +270,11 @@ ul.nice-menu-down .menuparent a {
 }
 
 ul.nice-menu-down li.menuparent {
-  background: #eee url(arrow-down.png) right center no-repeat; /* LTR */
+  background: transparent url(arrow-down.png) right center no-repeat; /* LTR */
 }
 
 ul.nice-menu-down li.menuparent:hover {
-  background: #ccc url(arrow-down.png) right center no-repeat; /* LTR */
+  background: transparent url(arrow-down.png) right center no-repeat; /* LTR */
 }
 
 ul.nice-menu-down li li.menuparent {
@@ -229,16 +285,13 @@ ul.nice-menu-down li li.menuparent:hover {
   background: #ccc url(arrow-right.png) right center no-repeat; /* LTR */
 }
 
-/******************************
- Garland-specific CSS
-******************************/
 
 /**
  * Global CSS for ALL menu types
  */
 ul.nice-menu li {
   margin: 0;
-  padding-left: 0; /* LTR */
+  padding: 0px 17px 0px 17px; /* LTR */
   background-image: none;
 }
 
@@ -250,17 +303,14 @@ ul.nice-menu li {
   background: #eee;
 }
 
-#header-region ul.nice-menu ul {
-  top: 1.8em;
+ul.nice-menu ul {
+  top: 30px; /* Determines how far down the Pull Down Menu Appears!!! !@#$*************************/
   left: -1px; /* LTR */
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 0px solid #ccc;
   margin-right: 0; /* LTR */
 }
 
-#header-region ul.nice-menu ul {
-  top: 1.7em;
-}
 
 /**
  * HORIZONTAL (down) Nice Menus
@@ -373,7 +423,44 @@ ul.nice-menu li {
 -------------------------------------------------------------- */
 /* Sidebar widths can be controlled through theme settings */
 .main-inner .sidebar-first {
-	background-color: fuchsia;
+	background-color: #77c3c6;
+	width: 200px;
+	padding: 75px 30px 30px 30px;
+/* 	height: 355px; */
+}
+
+.main-inner .sidebar-first-inner{
+	color: #FFF;
+	font-family: Verdana;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #FFF;
+	height: 355px;
+}
+
+.main-inner .sidebar-first-inner .block{
+	background-color: #77c3c6;
+	width: 164px;
+	padding: 0px 17px 0px 17px;
+}
+
+.main-inner .sidebar-first-inner .block h2{
+	color: #FFF;
+	font-size: 12px;
+	font-family: Verdana;
+	font-style: normal;
+	font-weight: 300;
+	letter-spacing: 3px;
+	padding-top: 14px;
+	margin-left: -27px;
+	padding-left: 31px;
+	padding-bottom: 13px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFF;
+	border-bottom-width: 1px;
+	width: 168px;
+	margin-bottom: 17px;
+	
 }
 
 .sidebar-second {
@@ -402,12 +489,15 @@ ul.nice-menu li {
 }
 
 .postscript-bottom-wrapper {
+	background:url(../images/b_footer.jpg) no-repeat 0% 0px;
+	height: 200px;
 }
 
 .postscript-bottom {
 }
 
 .postscript-bottom-inner {
+	margin: 0px 0px 0px 300px;
 }
 
 .footer-wrapper {
@@ -531,7 +621,7 @@ h2.block-title {
 #content-tabs {
   background-color: transparent;
   float: left; /* LTR */
-  margin: 20px 0;
+  margin: 40px;
   padding: 0;
 }
 
