@@ -15,6 +15,7 @@
 /* Add general site styling here for typography and background */
 body {
   background-color: #bde3dc;
+  font-family: 'Roboto', 'Verdana', sans-serif;
   font-size: 75%;   /* also set in fusion_starter.info: settings[base-font-size] = font-size-12 */
 }
 
