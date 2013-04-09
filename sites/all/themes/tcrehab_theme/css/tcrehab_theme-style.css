@@ -2,8 +2,7 @@
 -------------------------------------------------------------- */
 /* Teal background on home page facebook feed & Pull Down Menu = #77c3c6 */
 /* Light green background color of page is more than 960px = #bde3dc */
-/* Top Navigation Font  = #6fc5cd - Yas photoshop file*/
-/* Top Navigation Font  = #7fd7ea - Sam color matching*/
+/* Top Navigation Font Color  = #91e4e7 */
 /* Top Navigation Font Hover  = #d4f97e */
 /* Top Navigation Pull Down Hover  = #208197 */
 
@@ -80,7 +79,9 @@ body {
   needed */
 #logo {
   float: left;
-  margin-right: 20px;
+  margin: -30px 0px 0px 3px;
+  position: absolute;
+  z-index: 10;
 }
 
 /* Link and hover styles for site name */
@@ -103,13 +104,30 @@ body {
 	width: 700px;
 }
 
-.front .main-group .gutter{
+.front .main-group .gutter,
+.front .grid12-12 .region-content {
 	margin: 0px;
 }
 
 .front .sidebar-first {
+	height: 355px;
 }
 
+.front .block-system {
+	width: 700px;
+	height: 400px;
+/* 	background-color: red; */
+	margin: 0px;
+}
+
+.front .region-content{
+	width: 700px;
+	height: 460px;	
+}
+
+.front .content-inner{
+	height: 460px;
+}
 
 /* Regions
 
@@ -159,14 +177,14 @@ body {
 }
 
 .header-top {
-	background:url(../images/b_top_nav.jpg) no-repeat 0% 0px;
+	background: url(../images/b_top_nav.jpg) no-repeat 0% 0px;
 	width: 960px;
 	height: 36px;
 	overflow: visible;
 }
 
 .header-top-inner{
-  background: url(../images/tcrehablogo.png) no-repeat 2% 5px;
+/*   background: url(../images/tcrehablogo.png) no-repeat 2% 5px; */
   position: absolute;
 	height: 120px;
 	width: 960px;
@@ -197,8 +215,10 @@ ul.nice-menu li {
 
 ul.nice-menu a {
   padding: 0.3em 5px 0.3em 5px;
-  color: #7fd7ea;
-  font-size: 17px;/* Determines the size of the font for the Menu Items ie: Home, Who We Are, etc... */
+  color: #91e4e7;
+  font-family: 'Roboto', 'Verdana', sans-serif;
+  font-size: 16px; /* Determines the size of the font for the Menu Items ie: Home, Who We Are, etc... */
+	letter-spacing: 1px;
 }
 
 ul.nice-menu a:hover {
@@ -224,7 +244,8 @@ ul.nice-menu ul li {
 ******************************/
 
 .block-nice-menus {
-	margin: 0px 0px 0px 280px;
+	margin: 0px 0px 0px 260px;
+	width: 700px;
 }
 
 ul.nice-menu-down {
@@ -243,10 +264,12 @@ ul.nice-menu-down li li {
   border-top: 0;
   background-color: #77c3c6; /*Background Color of the drop down */
   width: 10em;
+  height: 30px;
 }
 
 ul.nice-menu-down li li a{
 	color: #FFF; /* Color of Drop Down Text */
+	font-size: 12px;
 }
 
 ul.nice-menu-down li li a:hover{
@@ -271,19 +294,19 @@ ul.nice-menu-down .menuparent a {
 }
 
 ul.nice-menu-down li.menuparent {
-  background: transparent url(arrow-down.png) right center no-repeat; /* LTR */
+  background: transparent right center no-repeat; /* LTR */
 }
 
 ul.nice-menu-down li.menuparent:hover {
-  background: transparent url(arrow-down.png) right center no-repeat; /* LTR */
+  background: transparent right center no-repeat; /* LTR */
 }
 
 ul.nice-menu-down li li.menuparent {
-  background: #eee url(arrow-right.png) right center no-repeat; /* LTR */
+/*   background: #eee url(arrow-right.png) right center no-repeat; /* LTR */
 }
 
 ul.nice-menu-down li li.menuparent:hover {
-  background: #ccc url(arrow-right.png) right center no-repeat; /* LTR */
+/*   background: #ccc url(arrow-right.png) right center no-repeat; /* LTR */
 }
 
 
@@ -322,76 +345,59 @@ ul.nice-menu ul {
 }
 
 #header-region ul.nice-menu-down li.menuparent {
-  background: #eee url(arrow-down.png) right center no-repeat; /* LTR */
+/*   background: #eee url(arrow-down.png) right center no-repeat; /* LTR */
 }
 
 #header-region ul.nice-menu-down li.menuparent:hover {
-  background: #ccc url(arrow-down.png) right center no-repeat; /* LTR */
+/*   background: #ccc url(arrow-down.png) right center no-repeat; /* LTR */
 }
 
 #header-region ul.nice-menu-down li li.menuparent {
-  background: #eee url(arrow-right.png) right center no-repeat; /* LTR */
+/*   background: #eee url(arrow-right.png) right center no-repeat; /* LTR */ 
 }
 
 #header-region ul.nice-menu-down li li.menuparent:hover {
-  background: #ccc url(arrow-right.png) right center no-repeat; /* LTR */
+/*   background: #ccc url(arrow-right.png) right center no-repeat; /* LTR */
 }
 
-
-
-/* Main Menu
+/* Homepage Quick Access Menu Settings under the Slide Show
 /-------------------------------------------------------------- */
-/* Add general styles for main menu here, such as typography, borders, floats,
-  or spacing above/below */
-.main-menu {
+#block-nice_menus-3{
+	background: url(../images/b_home3buttons.jpg) no-repeat 0% 0px;
+	margin: 0px;
+	height: 60px;
 }
 
-/* These styles work well with the Superfish module. 
- * http://www.drupal.org/project/superfish */
- 
-/* styles for Superfish main menu */
-.main-menu-inner ul.sf-menu {
+#block-nice_menus-3 .nice-menu{
+/* 	background-color: fuchsia; */
+	height: 40px;
+	margin: 10px 0px;
 }
 
-/* Link style for top level menu items, add padding here */
-.main-menu-inner ul.sf-menu a,
-.main-menu-inner ul.sf-menu a:visited  {
+#block-nice_menus-3 ul.nice-menu li{
+	padding: 0px 36px;
+	height: 40px;
 }
 
-.main-menu-inner ul.sf-menu a:hover,
-.main-menu-inner ul.sf-menu a:active,
-.main-menu-inner ul.sf-menu a:focus {
+#block-nice_menus-3 ul.nice-menu li.first{
+	border-right: #fff solid 1px;
 }
 
-/* These are the top level menu items, add border-right here for separators */
-.main-menu-inner ul.sf-menu li {
+#block-nice_menus-3 ul.nice-menu li.last{
+	border-left: #fff solid 1px;
 }
 
-/* Add border-right: 0; here to remove separator on last menu item */
-.main-menu-inner ul.sf-menu li.last {
+#block-nice_menus-3 .nice-menu a {
+	font-family: 'Roboto Condensed', 'Verdana', sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	color: #91e4e7;
+	margin-top: 3px;
 }
 
-/* Style for container of dropdown, add background or border */
-.main-menu-inner ul.sf-menu ul {
+#block-nice_menus-3 .nice-menu a:hover {
+	color: #d4f97e;
 }
-
-/* Style for individual dropdown menu items, add border-bottom for separators */
-.main-menu-inner ul.sf-menu li li {
-  background-color: #fff;
-}
-
-.main-menu-inner ul.sf-menu li li.last {
-
-}
-
-.main-menu-inner ul.sf-menu li li li {
-}
-
-/* Style for hover of dropdown menu items (add background-color here) */
-.main-menu-inner ul.sf-menu li ul li:hover,
-.main-menu-inner ul.sf-menu li ul li.sfHover {
-}
-
 
 /*  Preface Regions
 -------------------------------------------------------------- */
@@ -406,6 +412,15 @@ ul.nice-menu ul {
 
 .preface-top-inner {
 }
+
+/*  Preface Bottom Regions For Top Header Images
+-------------------------------------------------------------- */
+
+.preface-bottom-inner .block .gutter{
+	margin: 0px;
+}
+
+
 
 .preface-bottom {
 }
@@ -476,6 +491,84 @@ ul.nice-menu ul {
 .content-inner {
 }
 
+.grid12-12 h1{
+	margin: 20px 75px 50px 75px;
+	color: #92d6e6;
+	font-size: 48px;
+  font-family: 'Roboto', 'Verdana', sans-serif;
+  font-weight: 400;
+}
+
+.grid12-12 .region-content{
+  font-family: 'Roboto', 'Verdana', sans-serif;
+  font-weight: 300;
+	margin: 0px 150px;
+	width: 660px;
+}
+
+.grid12-12 .region-content h5{
+  font-family: 'Roboto', 'Verdana', sans-serif;
+  font-weight: 400;
+  color: #006C7B;
+  font-size: 14px;
+}
+
+.grid12-12 .region-content p{
+	margin: 0px 0px 30px 0px;
+}
+
+#pid-who-we-are .grid12-12 h1{
+	margin: 20px 75px 50px 100px;
+}
+
+
+#pid-who-we-are .grid12-12 .region-content{
+  font-family: 'Roboto', 'Verdana', sans-serif;
+  font-weight: 300;
+	margin: 0px 100px;
+	width: 660px;
+}
+
+#pid-who-we-are .grid12-12 .field-type-image {
+	float: left;
+	width: 100px;
+	position: absolute;
+}
+
+#pid-who-we-are .field-name-body {
+	float: left;
+	width: 600px;
+	margin-left: 125px;
+}
+
+#pid-staff .grid12-12 h2{
+	margin: 0px 0px 50px 0px;
+	float: left;
+	width: 100px;
+	color: #006d7b;
+}
+
+#pid-staff .region-content {
+	float: left;
+	width: 600px;
+	margin-left: 125px;
+}
+
+#pid-staff .views-row{
+	background-color: aqua;
+	width: 800px;
+}
+
+#pid-staff .views-field-body{
+	background-color: red;
+	width: 500px;
+}
+
+.views-field-field-staff-image{
+	width: 100px;
+}
+
+
 /* This region only appears on full node pages. It's useful for ads or other
   content between the body of the node and its comments */
 .node-bottom {
@@ -490,8 +583,6 @@ ul.nice-menu ul {
 }
 
 .postscript-bottom-wrapper {
-	background:url(../images/b_footer.jpg) no-repeat 0% 0px;
-	height: 200px;
 }
 
 .postscript-bottom {
@@ -508,8 +599,34 @@ ul.nice-menu ul {
 }
 
 .footer-inner {
+	background:url(../images/b_footer.jpg) no-repeat 0% 0px;
+	height: 200px;
+	border-top: solid #fff 2px;
 }
 
+.block-footer-sitemap {
+	margin: 30px 0px 0px 260px;
+	width: 700px;
+}
+
+.block-footer-sitemap .gutter,
+#footer-sitemap {
+	margin: 0px;
+}
+
+#footer-sitemap ul li li {
+	margin-left: 15px;
+}
+
+#footer-sitemap a {
+ font-family: 'Roboto', 'Verdana', sans-serif;
+ font-size: 12px;
+ color: #fff;
+}
+
+#footer-sitemap ul li.menu-483 {
+	margin-left: 30px;
+}
 
 /* Page titles
 /-------------------------------------------------------------- */
