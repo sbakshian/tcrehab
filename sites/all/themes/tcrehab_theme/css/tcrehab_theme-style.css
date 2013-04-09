@@ -657,8 +657,10 @@ ul.nice-menu ul {
  color: #fff;
 }
 
-#footer-sitemap ul li.menu-483 {
-	margin-left: 30px;
+#footer-sitemap ul li.menu-483,
+#footer-sitemap ul li.menu-501,
+#footer-sitemap ul li.menu-502 {
+	margin-left: 50px;
 }
 
 /* Page titles
