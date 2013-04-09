@@ -541,30 +541,63 @@ ul.nice-menu ul {
 	margin-left: 125px;
 }
 
+/* Staff Page
+-------------------------------------------------------------- */
+
+
+
 #pid-staff .grid12-12 h2{
-	margin: 0px 0px 50px 0px;
+	margin: 0px 15px 0px 0px;
 	float: left;
 	width: 100px;
 	color: #006d7b;
+/* 	background-color: yellow; */
+	text-align: right;
 }
 
 #pid-staff .region-content {
 	float: left;
-	width: 600px;
-	margin-left: 125px;
+	width: 800px;
+	margin-left: 100px;
+	margin-right: 25px;
+/* 	background-color: green; */
 }
 
 #pid-staff .views-row{
-	background-color: aqua;
-	width: 800px;
+	float: left;
+	width: 740px;
+	margin-bottom: 25px;
+/* 	background-color: lime; */
 }
+
+#pid-staff .views-row-2,
+#pid-staff .views-row-3,
+#pid-staff .views-row-4 {
+	border-top: solid 1px #208197;
+	padding-top: 25px;
+}
+
+
+
 
 #pid-staff .views-field-body{
-	background-color: red;
+	float: left;
+/* 	background-color: aqua; */
 	width: 500px;
+	margin-left: 0px;
+	margin-right: 20px;
 }
 
-.views-field-field-staff-image{
+#pid-staff .views-field-body p{
+	float: left;
+/* 	background-color: red; */
+	width: 500px;
+	margin-left: 0px;
+	margin-bottom: 10px;
+}
+
+#pid-staff .views-field-field-staff-image{
+	float: left;
 	width: 100px;
 }
 
