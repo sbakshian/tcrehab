@@ -566,18 +566,8 @@ ul.nice-menu ul {
 #pid-staff .views-row{
 	float: left;
 	width: 740px;
-	margin-bottom: 25px;
 /* 	background-color: lime; */
 }
-
-#pid-staff .views-row-2,
-#pid-staff .views-row-3,
-#pid-staff .views-row-4 {
-	border-top: solid 1px #208197;
-	padding-top: 25px;
-}
-
-
 
 
 #pid-staff .views-field-body{
@@ -600,6 +590,18 @@ ul.nice-menu ul {
 	float: left;
 	width: 100px;
 }
+
+#pid-staff .views-row-1 .views-field-field-staff-order,
+#pid-staff .views-row-2 .views-field-field-staff-order,
+#pid-staff .views-row-3 .views-field-field-staff-order{
+	float: left;
+	margin: 20px 0px 30px 115px;
+	width: 500px;
+/* 	background-color: aqua; */
+	height: 5px;
+	border-bottom: solid 1px #208197;
+}
+
 
 
 /* This region only appears on full node pages. It's useful for ads or other
