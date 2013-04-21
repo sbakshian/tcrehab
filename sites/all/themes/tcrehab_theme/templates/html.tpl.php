@@ -43,7 +43,7 @@
 
 <head profile="<?php print $grddl_profile; ?>">
   <?php print $head; ?>
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,400italic|Roboto+Condensed' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,300italic,500,400italic|Roboto+Condensed' rel='stylesheet' type='text/css'>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
   <?php if ($mobile_friendly): ?>    

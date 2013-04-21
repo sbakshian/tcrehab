@@ -217,7 +217,7 @@ ul.nice-menu a {
   padding: 0.3em 5px 0.3em 5px;
   color: #91e4e7;
   font-family: 'Roboto', 'Verdana', sans-serif;
-  font-size: 16px; /* Determines the size of the font for the Menu Items ie: Home, Who We Are, etc... */
+  font-size: 14px; /* Determines the size of the font for the Menu Items ie: Home, Who We Are, etc... */
 	letter-spacing: 1px;
 }
 
@@ -290,7 +290,7 @@ ul.nice-menu-down li ul li ul {
 }
 
 ul.nice-menu-down .menuparent a {
-  padding-right: 15px; /* LTR */
+  padding-right: 10px; /* LTR */
 }
 
 ul.nice-menu-down li.menuparent {
@@ -315,7 +315,7 @@ ul.nice-menu-down li li.menuparent:hover {
  */
 ul.nice-menu li {
   margin: 0;
-  padding: 0px 17px 0px 17px; /* LTR */
+  padding: 0px 15px 0px 15px; /* LTR */
   background-image: none;
 }
 
@@ -492,18 +492,18 @@ ul.nice-menu ul {
 }
 
 .grid12-12 h1{
-	margin: 20px 75px 50px 75px;
+	margin: 20px 75px 25px 75px;
 	color: #92d6e6;
 	font-size: 48px;
   font-family: 'Roboto', 'Verdana', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .grid12-12 .region-content{
   font-family: 'Roboto', 'Verdana', sans-serif;
   font-weight: 300;
-	margin: 0px 150px;
-	width: 660px;
+	margin: 0px 160px;
+	width: 640px;
 }
 
 .grid12-12 .region-content h5{
@@ -514,7 +514,7 @@ ul.nice-menu ul {
 }
 
 .grid12-12 .region-content p{
-	margin: 0px 0px 30px 0px;
+	margin: 0px 0px 10px 0px;
 }
 
 #pid-who-we-are .grid12-12 h1{
@@ -544,15 +544,17 @@ ul.nice-menu ul {
 /* Staff Page
 -------------------------------------------------------------- */
 
-
-
 #pid-staff .grid12-12 h2{
 	margin: 0px 15px 0px 0px;
 	float: left;
-	width: 100px;
+	width: 120px;
 	color: #006d7b;
 /* 	background-color: yellow; */
 	text-align: right;
+  font-family: 'Roboto', 'Verdana', sans-serif;
+  font-weight: 400;
+  text-transform:uppercase;
+  letter-spacing: 2px; 
 }
 
 #pid-staff .region-content {
@@ -573,7 +575,7 @@ ul.nice-menu ul {
 #pid-staff .views-field-body{
 	float: left;
 /* 	background-color: aqua; */
-	width: 500px;
+	width: 480px;
 	margin-left: 0px;
 	margin-right: 20px;
 }
@@ -581,7 +583,7 @@ ul.nice-menu ul {
 #pid-staff .views-field-body p{
 	float: left;
 /* 	background-color: red; */
-	width: 500px;
+	width: 480px;
 	margin-left: 0px;
 	margin-bottom: 10px;
 }
@@ -603,6 +605,183 @@ ul.nice-menu ul {
 }
 
 
+/* Testimonials Page - Needs to float from Right to left since how the design of elements flow.
+-------------------------------------------------------------- */
+#pid-testimonials .region-content {
+	float: left;
+	width: 800px;
+	margin-left: 100px;
+	margin-right: 25px;
+/* 	background-color: green; */
+}
+
+#pid-testimonials .views-row{
+	float: left;
+	position: relative;
+	width: 760px;
+	height: inherit;
+/* 	background-color: lime; */
+	overflow: visible;
+	margin-bottom: 0px;
+}
+
+#pid-testimonials .views-field-field-patient-image{
+	float: right;
+	width: 150px;
+	height: 105px;
+	border-bottom: solid 1px #fff; /* Need this in case there is no photo of the Pet */
+}
+
+#pid-testimonials .views-field-field-patient-testimonial{
+	float: right;
+/* 	background-color: aqua; */
+	width: 420px;
+	margin-right: 20px;
+	margin-left: 0px;
+}
+
+#pid-testimonials .grid12-12 h2{
+	margin: 0px 10px 5px 0px;
+	float: left;
+	width: 150px;
+	color: #006d7b;
+  font-family: 'Roboto', 'Verdana', sans-serif;
+  font-weight: 400;
+  text-transform:uppercase;
+  letter-spacing: 2px; 
+/* 	background-color: yellow; */
+	text-align: right;
+}
+
+#pid-testimonials .views-field-field-patient-breed{
+	float: left;
+	text-align: right;
+	width: 150px;
+	margin-right: 10px;
+/* 	background-color: fuchsia; */
+}
+
+#pid-testimonials .views-field-field-patient-diagnosis{
+	float: left;
+	text-align: right;
+	margin-right: 10px;
+	width: 150px;
+/* 	background-color: fuchsia; */
+}
+
+#pid-testimonials .views-field-field-patient-testimonial-date{
+	float: left;
+	text-align: right;
+	margin-right: 10px;
+	width: 150px;
+	font-style: italic;
+	font-weight: 300;
+/* 	background-color: fuchsia; */
+}
+
+#pid-testimonials .views-field-field-patient-owner{
+/* 	background-color: maroon; */
+	float: left;
+	margin-top: 5px;
+	margin-left: 165px; 
+	width: 420px;
+	text-align: right;
+	font-weight: 400;
+	font-style: italic;
+	color: #208197;
+}
+
+#pid-testimonials .views-row .views-field-field-patient-spacer {
+	float: right;
+	margin: 20px 170px 30px 0px;
+	width: 420px;
+/* 	background-color: aqua; */
+	height: 5px;
+	border-bottom: solid 1px #208197;
+}
+
+#pid-testimonials .views-row-last .views-field-field-patient-spacer {
+	border-bottom: none;
+}
+/* Case Studies Page - Needs to float from Right to left since how the design of elements flow.
+-------------------------------------------------------------- */
+
+#pid-case-studies .region-content {
+	float: left;
+	width: 800px;
+	margin-left: 100px;
+	margin-right: 25px;
+/* 	background-color: green; */
+}
+
+#pid-case-studies .views-row{
+	float: left;
+	position: relative;
+	width: 760px;
+	height: inherit;
+/* 	background-color: lime; */
+	overflow: visible;
+	margin-bottom: 0px;
+}
+
+#pid-case-studies .views-field-field-patient-image{
+	float: right;
+	width: 150px;
+	height: 105px;
+	border-bottom: solid 1px #fff; /* Need this in case there is no photo of the Pet */
+}
+
+#pid-case-studies .grid12-12 h2{
+	margin: 0px 10px 5px 0px;
+	float: left;
+	width: 150px;
+	color: #006d7b;
+  font-family: 'Roboto', 'Verdana', sans-serif;
+  font-weight: 400;
+  text-transform:uppercase;
+  letter-spacing: 2px; 
+/* 	background-color: yellow; */
+	text-align: right;
+}
+
+#pid-case-studies .views-field-field-patient-breed{
+	float: left;
+	text-align: right;
+	width: 150px;
+	margin-right: 10px;
+/* 	background-color: fuchsia; */
+}
+
+#pid-case-studies .views-field-field-patient-age{
+	float: left;
+	text-align: right;
+	width: 150px;
+	margin-right: 10px;
+	font-style: italic;
+	font-weight: 300;
+/* 	background-color: fuchsia; */
+}
+
+#pid-case-studies .views-field-field-patient-case-study-details{
+	float: right;
+/* 	background-color: aqua; */
+	width: 420px;
+	margin-right: 20px;
+	margin-left: 0px;
+}
+
+#pid-case-studies .views-row .views-field-field-patient-spacer {
+	float: right;
+	margin: 20px 170px 30px 0px;
+	width: 420px;
+/* 	background-color: aqua; */
+	height: 5px;
+	border-bottom: solid 1px #208197;
+}
+
+#pid-case-studies .views-row-last .views-field-field-patient-spacer {
+	border-bottom: none;
+}
 
 /* This region only appears on full node pages. It's useful for ads or other
   content between the body of the node and its comments */
@@ -659,6 +838,7 @@ ul.nice-menu ul {
  color: #fff;
 }
 
+#footer-sitemap ul li.menu-537,
 #footer-sitemap ul li.menu-483,
 #footer-sitemap ul li.menu-501,
 #footer-sitemap ul li.menu-502 {
