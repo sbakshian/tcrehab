@@ -445,9 +445,20 @@ ul.nice-menu ul {
 /* 	height: 355px; */
 }
 
-.main-inner .sidebar-first-inner{
+.main-inner .sidebar-first-inner a{
 	color: #FFF;
-	font-family: Verdana;
+}
+
+.main-inner .sidebar-first-inner a:hover{
+	color: #d4f97e;
+	text-decoration: none;
+}
+
+.main-inner .sidebar-first-inner .views-field-field-facebook-post{
+	padding: 0px 5px;
+}
+
+.main-inner .sidebar-first-inner{
 	border-style: solid;
 	border-width: 1px;
 	border-color: #FFF;
@@ -463,9 +474,8 @@ ul.nice-menu ul {
 .main-inner .sidebar-first-inner .block h2{
 	color: #FFF;
 	font-size: 12px;
-	font-family: Verdana;
-	font-style: normal;
-	font-weight: 300;
+  font-family: 'Roboto', 'Verdana', sans-serif;
+  text-transform: uppercase;
 	letter-spacing: 3px;
 	padding-top: 14px;
 	margin-left: -27px;
@@ -474,7 +484,7 @@ ul.nice-menu ul {
 	border-bottom-style: solid;
 	border-bottom-color: #FFF;
 	border-bottom-width: 1px;
-	width: 168px;
+	width: 166px;
 	margin-bottom: 17px;
 	
 }
@@ -820,7 +830,7 @@ ul.nice-menu ul {
 
 .block-footer-sitemap {
 	margin: 30px 0px 0px 260px;
-	width: 700px;
+	width: 630px;
 }
 
 .block-footer-sitemap .gutter,
@@ -838,11 +848,27 @@ ul.nice-menu ul {
  color: #fff;
 }
 
+#footer-sitemap a:hover{
+	color: #d4f97e;
+	text-decoration: none;
+}
+
 #footer-sitemap ul li.menu-537,
 #footer-sitemap ul li.menu-483,
 #footer-sitemap ul li.menu-501,
 #footer-sitemap ul li.menu-502 {
 	margin-left: 50px;
+}
+
+#block-block-3{ /* Facbook Icon Link in the Footer */
+	width: 29px;
+	float: left;
+	padding: 0px;
+	margin-top: 24px;
+}
+
+#block-block-3 .gutter{
+	margin: 0px;
 }
 
 /* Page titles
