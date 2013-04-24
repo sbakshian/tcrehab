@@ -15,7 +15,8 @@
 body {
   background-color: #bde3dc;
   font-family: 'Roboto', 'Verdana', sans-serif;
-  font-size: 75%;   /* also set in fusion_starter.info: settings[base-font-size] = font-size-12 */
+  font-size: 80%;
+  line-height: 180%;   /* also set in fusion_starter.info: settings[base-font-size] = font-size-12 */
 }
 
 /* Default link styles - separate a:visited for a different visited link style */
@@ -196,6 +197,10 @@ body {
  Global CSS for ALL menu types for Nice Menus
 ******************************/
 
+#block-nice_menus-1 .gutter{
+	margin: 0px;
+}
+
 ul.nice-menu,
 ul.nice-menu ul {
   list-style: none;
@@ -214,10 +219,11 @@ ul.nice-menu li {
 }
 
 ul.nice-menu a {
-  padding: 0.3em 5px 0.3em 5px;
+  padding: 0.3em 2px 0.3em 2px;
   color: #91e4e7;
   font-family: 'Roboto', 'Verdana', sans-serif;
-  font-size: 14px; /* Determines the size of the font for the Menu Items ie: Home, Who We Are, etc... */
+  font-weight: 400;
+  font-size: 16px; /* Determines the size of the font for the Menu Items ie: Home, Who We Are, etc... */
 	letter-spacing: 1px;
 }
 
@@ -263,9 +269,17 @@ ul.nice-menu-down li {
 ul.nice-menu-down li li {
   border-top: 0;
   background-color: #77c3c6; /*Background Color of the drop down */
-  width: 10em;
+  width: 8em;
   height: 30px;
 }
+
+/*
+ul.nice-menu-down li li.menu-538.odd,   Needs further development for custom widths pull downs.
+ul.nice-menu-down li li.even{
+ background-color: fuchsia;
+ width: 9.5em;
+}
+*/
 
 ul.nice-menu-down li li a{
 	color: #FFF; /* Color of Drop Down Text */
@@ -447,6 +461,14 @@ ul.nice-menu ul {
 
 .main-inner .sidebar-first-inner a{
 	color: #FFF;
+	font-family: 'Roboto', 'Verdana', sans-serif;
+	font-size: 12px;
+	letter-spacing: 2px;
+	font-weight: 300;
+}
+
+.main-inner .sidebar-first-inner p{
+	line-height: 145%;
 }
 
 .main-inner .sidebar-first-inner a:hover{
@@ -458,6 +480,20 @@ ul.nice-menu ul {
 	padding: 0px 5px;
 }
 
+.main-inner .view-facebook-feed-block .views-row-first{
+/* 	background-color: fuchsia; */
+	margin: 5px 0px 17px 0px;
+	padding: 0px 0px 5px 0px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFF;
+	border-bottom-width: 1px;
+}
+
+.main-inner .view-facebook-feed-block .views-more-link{
+	color: #208197;
+}
+
+
 .main-inner .sidebar-first-inner{
 	border-style: solid;
 	border-width: 1px;
@@ -467,24 +503,24 @@ ul.nice-menu ul {
 
 .main-inner .sidebar-first-inner .block{
 	background-color: #77c3c6;
-	width: 164px;
-	padding: 0px 17px 0px 17px;
+	width: 193px;
+	padding: 0px 2px 0px 2px;
 }
 
 .main-inner .sidebar-first-inner .block h2{
 	color: #FFF;
-	font-size: 12px;
-  font-family: 'Roboto', 'Verdana', sans-serif;
+	font-size: 14px;
+  font-family: 'Roboto Condensed', 'Verdana', sans-serif;
   text-transform: uppercase;
-	letter-spacing: 3px;
+	letter-spacing: 4px;
 	padding-top: 14px;
-	margin-left: -27px;
-	padding-left: 31px;
+	margin-left: -12px;
+	padding-left: 23px;
 	padding-bottom: 13px;
 	border-bottom-style: solid;
 	border-bottom-color: #FFF;
 	border-bottom-width: 1px;
-	width: 166px;
+	width: 175px;
 	margin-bottom: 17px;
 	
 }
@@ -504,9 +540,10 @@ ul.nice-menu ul {
 .grid12-12 h1{
 	margin: 20px 75px 25px 75px;
 	color: #92d6e6;
-	font-size: 48px;
+	font-size: 45px;
   font-family: 'Roboto', 'Verdana', sans-serif;
-  font-weight: 300;
+  font-weight: 100;
+  letter-spacing: 1px;
 }
 
 .grid12-12 .region-content{
@@ -521,15 +558,18 @@ ul.nice-menu ul {
   font-weight: 400;
   color: #006C7B;
   font-size: 14px;
+  letter-spacing: 1px;
 }
 
 .grid12-12 .region-content p{
 	margin: 0px 0px 10px 0px;
 }
 
+/*
 #pid-who-we-are .grid12-12 h1{
 	margin: 20px 75px 50px 100px;
 }
+*/
 
 
 #pid-who-we-are .grid12-12 .region-content{
@@ -829,8 +869,8 @@ ul.nice-menu ul {
 }
 
 .block-footer-sitemap {
-	margin: 30px 0px 0px 260px;
-	width: 630px;
+	margin: 30px 0px 0px 263px;
+	width: 627px;
 }
 
 .block-footer-sitemap .gutter,
@@ -855,10 +895,14 @@ ul.nice-menu ul {
 
 #footer-sitemap ul li.menu-537,
 #footer-sitemap ul li.menu-483,
-#footer-sitemap ul li.menu-501,
-#footer-sitemap ul li.menu-502 {
+#footer-sitemap ul li.menu-501{
 	margin-left: 50px;
 }
+
+#footer-sitemap ul li.menu-502 {
+	margin-left: 35px;
+}
+
 
 #block-block-3{ /* Facbook Icon Link in the Footer */
 	width: 29px;
