@@ -538,7 +538,7 @@ ul.nice-menu ul {
 }
 
 .grid12-12 h1{
-	margin: 20px 75px 25px 75px;
+	margin: 20px 70px 25px 70px;
 	color: #92d6e6;
 	font-size: 45px;
   font-family: 'Roboto', 'Verdana', sans-serif;
@@ -595,7 +595,7 @@ ul.nice-menu ul {
 -------------------------------------------------------------- */
 
 #pid-staff .grid12-12 h2{
-	margin: 0px 15px 0px 0px;
+	margin: 0px 20px 0px 0px;
 	float: left;
 	width: 160px;
 	color: #006d7b;
@@ -609,9 +609,9 @@ ul.nice-menu ul {
 
 #pid-staff .region-content {
 	float: left;
-	width: 800px;
-	margin-left: 75px;
-	margin-right: 25px;
+	width: 820px;
+	margin-left: 70px;
+	margin-right: 70px;
 	background-color: green;
 }
 
@@ -621,7 +621,7 @@ ul.nice-menu ul {
 
 #pid-staff .views-row{
 	float: left;
-	width: 800px;
+	width: 820px;
 	background-color: lime;
 }
 
@@ -629,7 +629,7 @@ ul.nice-menu ul {
 #pid-staff .views-field-body{
 	float: left;
 	background-color: aqua;
-	width: 440px;
+	width: 460px;
 	margin-left: 0px;
 	margin-right: 20px;
 }
@@ -637,7 +637,7 @@ ul.nice-menu ul {
 #pid-staff .views-field-body p{
 	float: left;
 	background-color: red;
-	width: 440px;
+	width: 460px;
 	margin-left: 0px;
 	margin-bottom: 10px;
 }
