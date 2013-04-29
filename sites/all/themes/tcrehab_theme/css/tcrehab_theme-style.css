@@ -615,6 +615,10 @@ ul.nice-menu ul {
 	background-color: green;
 }
 
+#pid-staff .region-content .gutter{
+	margin: 0px;
+}
+
 #pid-staff .views-row{
 	float: left;
 	width: 800px;
@@ -647,8 +651,8 @@ ul.nice-menu ul {
 #pid-staff .views-row-2 .views-field-field-staff-order,
 #pid-staff .views-row-3 .views-field-field-staff-order{
 	float: left;
-	margin: 20px 0px 30px 115px;
-	width: 500px;
+	margin: 20px 0px 30px 175px;
+	width: 440px;
 	background-color: aqua;
 	height: 5px;
 	border-bottom: solid 1px #208197;
