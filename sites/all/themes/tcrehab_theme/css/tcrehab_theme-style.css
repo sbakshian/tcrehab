@@ -597,9 +597,9 @@ ul.nice-menu ul {
 #pid-staff .grid12-12 h2{
 	margin: 0px 15px 0px 0px;
 	float: left;
-	width: 120px;
+	width: 160px;
 	color: #006d7b;
-/* 	background-color: yellow; */
+	background-color: yellow;
 	text-align: right;
   font-family: 'Roboto', 'Verdana', sans-serif;
   font-weight: 400;
@@ -610,37 +610,37 @@ ul.nice-menu ul {
 #pid-staff .region-content {
 	float: left;
 	width: 800px;
-	margin-left: 100px;
+	margin-left: 75px;
 	margin-right: 25px;
-/* 	background-color: green; */
+	background-color: green;
 }
 
 #pid-staff .views-row{
 	float: left;
-	width: 740px;
-/* 	background-color: lime; */
+	width: 800px;
+	background-color: lime;
 }
 
 
 #pid-staff .views-field-body{
 	float: left;
-/* 	background-color: aqua; */
-	width: 480px;
+	background-color: aqua;
+	width: 440px;
 	margin-left: 0px;
 	margin-right: 20px;
 }
 
 #pid-staff .views-field-body p{
 	float: left;
-/* 	background-color: red; */
-	width: 480px;
+	background-color: red;
+	width: 440px;
 	margin-left: 0px;
 	margin-bottom: 10px;
 }
 
 #pid-staff .views-field-field-staff-image{
 	float: left;
-	width: 100px;
+	width: 160px;
 }
 
 #pid-staff .views-row-1 .views-field-field-staff-order,
@@ -649,7 +649,7 @@ ul.nice-menu ul {
 	float: left;
 	margin: 20px 0px 30px 115px;
 	width: 500px;
-/* 	background-color: aqua; */
+	background-color: aqua;
 	height: 5px;
 	border-bottom: solid 1px #208197;
 }
