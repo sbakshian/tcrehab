@@ -785,7 +785,7 @@ ul.nice-menu ul {
 	width: 820px;
 	margin-left: 70px;
 	margin-right: 70px;
-/* 	background-color: green; */
+	background-color: green;
 }
 
 #pid-case-studies .views-row{
@@ -793,16 +793,17 @@ ul.nice-menu ul {
 	position: relative;
 	width: 820px;
 	height: inherit;
-/* 	background-color: lime; */
+	background-color: lime;
 	overflow: visible;
 	margin-bottom: 0px;
 }
 
 #pid-case-studies .views-field-field-patient-image{
-	float: right;
+	float: left;
 	width: 160px;
-	min-height: 190px;
-	border-bottom: solid 1px #fff; /* Need this in case there is no photo of the Pet */
+	position: absolute;
+	margin-left: 480px;
+/* 	border-bottom: solid 1px #fff; /* Need this in case there is no photo of the Pet */ */
 }
 
 #pid-case-studies .grid12-12 h2{
@@ -814,7 +815,7 @@ ul.nice-menu ul {
   font-weight: 400;
   text-transform:uppercase;
   letter-spacing: 2px; 
-/* 	background-color: yellow; */
+	background-color: yellow;
 	text-align: right;
 }
 
@@ -823,7 +824,7 @@ ul.nice-menu ul {
 	text-align: right;
 	width: 160px;
 	margin-right: 10px;
-/* 	background-color: fuchsia; */
+	background-color: fuchsia;
 }
 
 #pid-case-studies .views-field-field-patient-age{
@@ -833,23 +834,22 @@ ul.nice-menu ul {
 	margin-right: 10px;
 	font-style: italic;
 	font-weight: 300;
-/* 	background-color: fuchsia; */
+	background-color: fuchsia;
 }
 
 #pid-case-studies .views-field-field-patient-case-study-details{
 	float: right;
-/* 	background-color: aqua; */
+	background-color: aqua;
 	width: 460px;
-	margin-right: 20px;
+	margin-right: 180px;
 	margin-left: 0px;
-	min-height: 80px;
 }
 
 #pid-case-studies .views-row .views-field-field-patient-spacer {
 	float: right;
-	margin: 20px 20px 30px 0px;
+	margin: 20px 180px 30px 0px;
 	width: 460px;
-/* 	background-color: aqua; */
+	background-color: aqua;
 	height: 5px;
 	border-bottom: solid 1px #208197;
 }
@@ -857,6 +857,11 @@ ul.nice-menu ul {
 #pid-case-studies .views-row-last .views-field-field-patient-spacer {
 	border-bottom: none;
 }
+
+#pid-case-studies .views-row-last .views-field-field-patient-image{
+	min-height: 0px;
+}
+
 
 /* This region only appears on full node pages. It's useful for ads or other
   content between the body of the node and its comments */
