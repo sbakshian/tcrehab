@@ -875,6 +875,36 @@ ul.nice-menu ul {
 	padding-top: 0px;
 }
 
+/* Download Forms Page
+-------------------------------------------------------------- */
+.download-button-01,
+.download-button-02,
+.download-button-03 {
+	float: left;
+	display:block;
+	color:#FFFFFF;
+	background-color:#77c3c6;
+	width:134px;
+	text-align:center;
+	padding:12px 30px;
+	text-decoration:none;
+	letter-spacing:2px;
+	text-transform:uppercase;
+	height: 42px;
+}
+
+.download-button-01,
+.download-button-02{
+	margin-right: 19px;
+}
+
+
+
+#pid-forms a:hover {
+	color: #167c92;
+	text-decoration: none;
+}
+
 
 /* This region only appears on full node pages. It's useful for ads or other
   content between the body of the node and its comments */
