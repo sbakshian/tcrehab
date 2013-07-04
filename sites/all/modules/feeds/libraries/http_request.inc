@@ -178,6 +178,26 @@ function http_request_get($url, $username = NULL, $password = NULL, $accept_inva
       curl_setopt($download, CURLOPT_RETURNTRANSFER, TRUE);
       curl_setopt($download, CURLOPT_ENCODING, '');
       curl_setopt($download, CURLOPT_TIMEOUT, $request_timeout);
+      
+    // In case of proxy between the Drupal host server and internet.
+    $proxy_server = variable_get('proxy_server', '');
+      if (!empty($proxy_server)) {
+        curl_setopt($download, CURLOPT_PROXY, $proxy_server);
+        // Proxy port.
+        $proxy_port = variable_get('proxy_port', 8080);
+        curl_setopt($download, CURLOPT_PROXYPORT, $proxy_port);
+        // Proxy user/password.
+        $proxy_username = variable_get('proxy_username', '');
+        if (!empty($proxy_username)) {
+          $proxy_password = variable_get('proxy_password', '');
+          $str_usr_pwd = "{$proxy_username}:{$proxy_password}";
+          curl_setopt($download, CURLOPT_PROXYUSERPWD, $str_usr_pwd);
+          $proxy_auth_method = variable_get('proxy_auth_method', CURLAUTH_BASIC);
+          curl_setopt($download, CURLOPT_PROXYAUTH, $proxy_auth_method);
+        }
+      }
+      
+      
       if ($accept_invalid_cert) {
         curl_setopt($download, CURLOPT_SSL_VERIFYPEER, 0);
       }
@@ -191,6 +211,18 @@ function http_request_get($url, $username = NULL, $password = NULL, $accept_inva
             '@url' => $url,
           )), curl_errno($download)
         );
+      }
+
+      // Proxy patch to remove extra data from the header which is not
+      // considered by CURLINFO_HEADER_SIZE (possibly cURL bug)
+      // This data is only added when to HTTP header when working with proxy
+      // Example string added: <HTTP/1.0 200 Connection established\r\n\r\n>
+      if ($proxy_server) {
+        $http_header_break = "\r\n\r\n";
+        $response = explode($http_header_break, $data);
+        if (count($response) > 2) {
+          $data = substr($data, strlen($response[0] . $http_header_break), strlen($data));
+        }
       }
 
       $header_size = curl_getinfo($download, CURLINFO_HEADER_SIZE);
