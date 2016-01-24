@@ -262,6 +262,14 @@ class FeedImport {
       if (!ini_get('safe_mode')) {
         set_time_limit(0);
       }
+
+      // Prepare filters.
+      $param = variable_get('feed_import_field_param_name', '[field]');
+      foreach ($feed['xpath']['#items'] as &$item) {
+        self::prepareFilters($item['#filter'], $param);
+        self::prepareFilters($item['#pre_filter'], $param);
+      }
+
       // Call process function to get processed items.
       $items = call_user_func($func, $feed);
       // Parse report.
@@ -400,103 +408,29 @@ class FeedImport {
    *   A string or array of strings as a result of xpath function
    */
   public static function getXpathValue(&$item, $xpath) {
-    // Handle invalid xpaths.
+    // Get values and handle xpath exceptions.
     try {
-      $xpath = $item->xpath($xpath);
+      $values = $item->xpath($xpath);
     }
     catch (Exception $e) {
       return NULL;
     }
-    if (!$xpath) {
+
+    // Xpath gave no values return null.
+    if (!$values) {
       return NULL;
     }
-    if (count($xpath) == 1) {
-      $xpath = (array) reset($xpath);
-      $count = count($xpath);
-      if (isset($xpath['@attributes']) && $count > 1) {
-        unset($xpath['@attributes']);
-        $count--;
-      }
-      // Convert to array.
-      $xpath = self::SimpleXmlToArray($xpath);
-      if ($count == 1) {
-        $xpath = reset($xpath);
-      }
-    }
-    else {
-      // Get multi-values.
-      foreach ($xpath as $key => &$x) {
-        // Convert to array.
-        $x = self::SimpleXmlToArray($x);
-        $count = count($x);
-        if (isset($x['@attributes']) && $count > 1) {
-          unset($x['@attributes']);
-          $count--;
-        }
-        if ($count == 1) {
-          $x = reset($x);
-        }
-        if (empty($x)) {
-          unset($xpath[$key], $x);
-        }
-      }
-      if (count($xpath) == 1) {
-        $xpath = reset($xpath);
-      }
-    }
-    return $xpath;
-  }
 
-  /**
-   * Converts SimpleXml objects to array
-   *
-   * @param SimpleXmlElement $xml
-   *   Object to convert.
-   *
-   * @return array
-   *   Converted result
-   */
-  public static function SimpleXmlToArray($xml) {
-    $xml = (array) $xml;
-    // Remove comments.
-    self::RemoveComment($xml);
-    foreach ($xml as &$item) {
-      if (!is_scalar($item)) {
-        $item = self::SimpleXmlToArray($item);
-        // Remove comments.
-        self::RemoveComment($item);
-      }
+    // Get the number of values.
+    $count = count($values);
+    $i = -1;
+    while (++$i < $count) {
+      // Get each value.
+      $values[$i] = (string) $values[$i][0];
     }
-    return $xml;
-  }
 
-  /**
-   * Removes comment tags from xml array
-   *
-   * @param array &$xml
-   *   Array where to remove comment
-   */
-  public static function RemoveComment(array &$xml) {
-    if (isset($xml['comment'])) {
-      if (empty($xml['comment'])) {
-        unset($xml['comment']);
-      }
-      else {
-        // Remove empty values.
-        $xml['comment'] = array_filter($xml['comment'], 'count');
-        switch (count($xml['comment'])) {
-          case 0:
-            unset($xml['comment']);
-            break;
-          case 1:
-            $xml['comment'] = reset($xml['comment']);
-            break;
-          default:
-            $xml['comment'] = array_values($xml['comment']);
-            break;
-        }
-      }
-    }
+    // Return value or an array of values.
+    return $count == 1 ? $values[0] : $values;
   }
 
   /**
@@ -544,14 +478,9 @@ class FeedImport {
    */
   public static function hasContent(&$var) {
     if (is_scalar($var)) {
-      if ((string) $var === '') {
-        return FALSE;
-      }
+      return ((string) $var) !== '';
     }
-    elseif (empty($var)) {
-      return FALSE;
-    }
-    return TRUE;
+    return !empty($var);
   }
 
   /**
@@ -608,9 +537,6 @@ class FeedImport {
       $i = 0;
       $aux = '';
       $count = count($field['#xpath']);
-      // Check ONCE if we have to filter or prefilter field.
-      $prefilter = !empty($field['#pre_filter']);
-      $filter = !empty($field['#filter']);
       // Loop through xpaths until we have data, otherwise use default value.
       while ($i < $count) {
         if (!$field['#xpath'][$i]) {
@@ -618,7 +544,7 @@ class FeedImport {
           continue;
         }
         $aux = self::getXpathValue($item, $field['#xpath'][$i]);
-        if ($prefilter) {
+        if ($field['#pre_filter']) {
           $pfval = self::applyFilter($aux, $field['#pre_filter']);
           // If item doesn't pass prefilter than go to next option.
           if (!self::hasContent($pfval)) {
@@ -629,7 +555,7 @@ class FeedImport {
         }
         // If filter passed prefilter then apply filter and exit while loop.
         if (self::hasContent($aux)) {
-          if ($filter) {
+          if ($field['#filter']) {
             $aux = self::applyFilter($aux, $field['#filter']);
           }
           break;
@@ -647,7 +573,9 @@ class FeedImport {
             break;
           // Provide default value before it was filtered.
           case 'default_value_filtered':
-            $aux = self::applyFilter($field['#default_value'], $field['#filter']);
+            $aux = $field['#filter']
+                      ? self::applyFilter($field['#default_value'], $field['#filter'])
+                      : NULL;
             break;
           // Skip this item by returning NULL.
           case 'skip_item':
@@ -861,6 +789,43 @@ class FeedImport {
   }
 
   /**
+   * Prepares a filter
+   *
+   * @param array $filters
+   *    An array of filters
+   * @param string $param
+   *    Param placeholder
+   */
+  public static function prepareFilters(&$filters, $param) {
+    foreach ($filters as $name => &$f) {
+      if (strpos($f['#function'], '::') !== FALSE) {
+        $f['#function'] = explode('::', $f['#function'], 2);
+        if (!$f['#function'][0]) {
+          $f['#function'][0] = 'FeedImportFilter';
+        }
+        if (!method_exists($f['#function'][0], $f['#function'][1])) {
+          unset($filters[$name]);
+          continue;
+        }
+      }
+      elseif (!function_exists($f['#function'])) {
+        unset($filters[$name]);
+        continue;
+      }
+      $f['#pvhold'] = NULL;
+      $f['#params'] = array_values($f['#params']);
+      for ($i = 0, $m = count($f['#params']); $i < $m; $i++) {
+        if ($f['#params'][$i] == $param) {
+          $f['#params'][$i] = &$f['#pvhold'];
+        }
+      }
+    }
+    if (!$filters) {
+      $filters = FALSE;
+    }
+  }
+
+  /**
    * Filters a field
    *
    * @param mixed $field
@@ -871,36 +836,17 @@ class FeedImport {
    * @return mixed
    *   Filtered value of field
    */
-  protected static function applyFilter($field, $filters) {
+  protected static function applyFilter($field, &$filters) {
     $field_param = variable_get('feed_import_field_param_name', '[field]');
     foreach ($filters as &$filter) {
-      $filter['#function'] = trim($filter['#function']);
-      // Check if function exists, support static functions.
-      if (strpos($filter['#function'], '::') !== FALSE) {
-        $filter['#function'] = explode('::', $filter['#function'], 2);
-        if ($filter['#function'][0] == '') {
-          $filter['#function'][0] = 'FeedImportFilter';
-        }
-        if (!method_exists($filter['#function'][0], $filter['#function'][1])) {
-          continue;
-        }
-      }
-      else {
-        if (!function_exists($filter['#function'])) {
-          continue;
-        }
-      }
-      // Set field value.
-      $key = array_search($field_param, $filter['#params']);
-      $filter['#params'][$key] = $field;
-      // Apply filter.
+      $filter['#pvhold'] = $field;
       try {
         $field = call_user_func_array($filter['#function'], $filter['#params']);
       }
       catch (Exception $e) {
-        // Just report this error. Nothing to handle.
+        // Just report this error, nothing to handle.
       }
-      $filter = NULL;
+      $filter['#pvhold'] = NULL;
     }
     return $field;
   }

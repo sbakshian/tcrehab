@@ -178,7 +178,7 @@ function http_request_get($url, $username = NULL, $password = NULL, $accept_inva
       curl_setopt($download, CURLOPT_RETURNTRANSFER, TRUE);
       curl_setopt($download, CURLOPT_ENCODING, '');
       curl_setopt($download, CURLOPT_TIMEOUT, $request_timeout);
-      curl_setopt($download, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4 ); // Added to eliminate cURL error (0) for BlueHost
+      curl_setopt($download, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4 );
 
       $proxy_server = variable_get('proxy_server');
 
