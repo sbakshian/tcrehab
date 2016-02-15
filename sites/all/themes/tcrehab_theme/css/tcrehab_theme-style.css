@@ -197,7 +197,7 @@ body {
  Global CSS for ALL menu types for Nice Menus
 ******************************/
 
-#block-nice_menus-1 .gutter{
+#block-nice-menus-1 .gutter{
 	margin: 0px;
 }
 
@@ -382,32 +382,32 @@ ul.nice-menu ul {
 
 /* Homepage Quick Access Menu Settings under the Slide Show
 /-------------------------------------------------------------- */
-#block-nice_menus-3{
+#block-nice-menus-3{
 	background: url(../images/b_home3buttons.jpg) no-repeat 0% 0px;
 	margin: 0px;
 	height: 60px;
 }
 
-#block-nice_menus-3 .nice-menu{
+#block-nice-menus-3 .nice-menu{
 /* 	background-color: fuchsia; */
 	height: 40px;
 	margin: 10px 0px;
 }
 
-#block-nice_menus-3 ul.nice-menu li{
+#block-nice-menus-3 ul.nice-menu li{
 	padding: 0px 32px;
 	height: 40px;
 }
 
-#block-nice_menus-3 ul.nice-menu li.first{
+#block-nice-menus-3 ul.nice-menu li.first{
 	border-right: #fff solid 1px;
 }
 
-#block-nice_menus-3 ul.nice-menu li.last{
+#block-nice-menus-3 ul.nice-menu li.last{
 	border-left: #fff solid 1px;
 }
 
-#block-nice_menus-3 .nice-menu a {
+#block-nice-menus-3 .nice-menu a {
 	font-family: 'Roboto Condensed', 'Verdana', sans-serif;
 	font-weight: 400;
 	font-size: 22px;
@@ -415,7 +415,7 @@ ul.nice-menu ul {
 	margin-top: 3px;
 }
 
-#block-nice_menus-3 .nice-menu a:hover {
+#block-nice-menus-3 .nice-menu a:hover {
 	color: #d4f97e;
 }
 
@@ -1011,8 +1011,21 @@ ul.nice-menu ul {
 	margin-top: 24px;
 }
 
-#block-block-3 .gutter{
+	#block-block-3 .gutter{
 	margin: 0px;
+}
+
+.block-bottom-address-bar{
+	background-color: #00616f;
+	height: 30 px;
+	margin-bottom: 0;
+	margin-top: 32px;
+}
+
+.block-bottom-address-bar .content{
+	color: #FFF;
+	padding-right: 28px;
+	text-align: right;
 }
 
 /* Page titles
