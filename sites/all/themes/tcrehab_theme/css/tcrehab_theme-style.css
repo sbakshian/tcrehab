@@ -48,6 +48,9 @@ a.button:active {
 	
 }
 
+label{
+	font-weight: 500;
+}
 
 /* Specific Typography
 -------------------------------------------------------------- */
