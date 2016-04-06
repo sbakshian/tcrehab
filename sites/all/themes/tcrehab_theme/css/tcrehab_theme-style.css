@@ -1433,3 +1433,15 @@ div.poll div.bar div.foreground {
   background-color: #ccc;
 }
 
+
+/* X-Ray WebForm Settings
+/-------------------------------------------------------------- */
+#edit-submitted-upload-xray1-upload-button,
+#edit-submitted-upload-xray2-upload-button,
+#edit-submitted-upload-xray3-upload-button,
+#edit-submitted-upload-xray4-upload-button,
+#edit-submitted-upload-xray5-upload-button,
+#edit-submitted-upload-xray6-upload-button,
+#edit-submitted-upload-xray7-upload-button{
+	display: none;
+}
